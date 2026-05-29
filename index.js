@@ -1,9 +1,19 @@
 const mineflayer = require('mineflayer');
+const http = require('http');
+
+// রেন্ডারকে শান্ত রাখার জন্য একটা ফেক ওয়েবসাইট পোর্ট খোলা
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Bot is running 24/7!\n');
+});
+server.listen(process.env.PORT || 3000, () => {
+    console.log('Fake web server is live to trick Render!');
+});
 
 function createBot() {
     const bot = mineflayer.createBot({
-        host: 'dynamic-8.magmanode.com', // ম্যাগমানোডের নতুন আইপি
-        port: 25712,                     // ম্যাগমানোডের নতুন পোর্ট
+        host: 'dynamic-8.magmanode.com', 
+        port: 25712,                     
         username: 'DarkplayBot',         
         version: '1.21.11'                
     });
