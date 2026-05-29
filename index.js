@@ -5,7 +5,7 @@ function createBot() {
         host: 'dynamic-8.magmanode.com', // ম্যাগমানোডের নতুন আইপি
         port: 25712,                     // ম্যাগমানোডের নতুন পোর্ট
         username: 'DarkplayBot',         
-        version: '1.21.1'                
+        version: '1.21.11'                
     });
 
     bot.on('spawn', () => {
